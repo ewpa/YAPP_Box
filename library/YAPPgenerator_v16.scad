@@ -588,7 +588,7 @@ module printBaseSnapJoins()
       {
         rotate([0,90,0])
           //color("blue") cylinder(d=wallThickness, h=snapWidth);
-          color("blue") cylinder(d=snapDiam, h=snapWidth); // 13-02-2022
+          color("blue") cylinder(d=snapDiam, h=snapWidth, $fn=25); // 13-02-2022
       }
       if (isTrue(yappSymmetric, snj, 3))
       {
@@ -597,7 +597,7 @@ module printBaseSnapJoins()
                     snapZposLR])
         {
           rotate([0,90,0])
-            color("blue") cylinder(d=snapDiam, h=snapWidth);
+            color("blue") cylinder(d=snapDiam, h=snapWidth, $fn=25);
         }
         
       } // yappCenter
@@ -611,7 +611,7 @@ module printBaseSnapJoins()
       {
         rotate([0,90,0])
           //color("blue") cylinder(d=wallThickness, h=snapWidth);
-          color("blue") cylinder(d=snapDiam, h=snapWidth);  // 13-02-2022
+          color("blue") cylinder(d=snapDiam, h=snapWidth, $fn=25);  // 13-02-2022
       }
       if (isTrue(yappSymmetric, snj, 3))
       {
@@ -621,7 +621,7 @@ module printBaseSnapJoins()
         {
           rotate([0,90,0])
             //color("blue") cylinder(d=wallThickness, h=snapWidth);
-            color("blue") cylinder(d=snapDiam, h=snapWidth);  // 13-02-2022
+            color("blue") cylinder(d=snapDiam, h=snapWidth, $fn=25);  // 13-02-2022
         }
         
       } // yappCenter
@@ -635,7 +635,7 @@ module printBaseSnapJoins()
       {
         rotate([270,0,0])
           //color("blue") cylinder(d=wallThickness, h=snapWidth);
-          color("blue") cylinder(d=snapDiam, h=snapWidth);  // 13-02-2022
+          color("blue") cylinder(d=snapDiam, h=snapWidth, $fn=25);  // 13-02-2022
       }
       if (isTrue(yappSymmetric, snj, 3))
       {
@@ -645,7 +645,7 @@ module printBaseSnapJoins()
         {
           rotate([270,0,0])
             //color("blue") cylinder(d=wallThickness, h=snapWidth);
-            color("blue") cylinder(d=snapDiam, h=snapWidth);  // 13-02-2022
+            color("blue") cylinder(d=snapDiam, h=snapWidth, $fn=25);  // 13-02-2022
         }
         
       } // yappCenter
@@ -659,7 +659,7 @@ module printBaseSnapJoins()
       {
         rotate([270,0,0])
           //color("blue") cylinder(d=wallThickness, h=snapWidth);
-          color("blue") cylinder(d=snapDiam, h=snapWidth);  // 13-02-2022
+          color("blue") cylinder(d=snapDiam, h=snapWidth, $fn=25);  // 13-02-2022
       }
       if (isTrue(yappSymmetric, snj, 3))
       {
@@ -669,7 +669,7 @@ module printBaseSnapJoins()
         {
           rotate([270,0,0])
             //color("blue") cylinder(d=wallThickness, h=snapWidth);
-            color("blue") cylinder(d=snapDiam, h=snapWidth);  // 13-02-2022
+            color("blue") cylinder(d=snapDiam, h=snapWidth, $fn=25);  // 13-02-2022
         }
         
       } // yappCenter
@@ -1243,7 +1243,7 @@ module cutoutsInXZ(type)
           translate([posx, (roundRadius+wallThickness+2), posz])
             rotate([90,0,0])
               color("green")
-                cylinder(h=wallThickness+roundRadius+3, d=cutOut[2], $fn=20);
+                cylinder(h=wallThickness+roundRadius+3, d=cutOut[2]);
         }
         
       } //   for cutOut's ..
@@ -1286,7 +1286,7 @@ module cutoutsInXZ(type)
           translate([posx, shellWidth+2, posz])
             rotate([90,0,0])
               color("green")
-                cylinder(h=wallThickness+roundRadius+3, d=cutOut[2], $fn=20);
+                cylinder(h=wallThickness+roundRadius+3, d=cutOut[2]);
         }
         
       } //  for ...
@@ -1344,7 +1344,7 @@ module cutoutsInYZ(type)
           translate([shellLength-(roundRadius+wallThickness+1), posy, posz])
             rotate([0, 90, 0])
               color("green")
-                cylinder(h=wallThickness+roundRadius+2, d=cutOut[2], $fn=20);
+                cylinder(h=wallThickness+roundRadius+2, d=cutOut[2]);
         }
         
       } //   for cutOut's ..
@@ -1388,7 +1388,7 @@ module cutoutsInYZ(type)
           translate([-1, posy, posz])
             rotate([0,90,0])
               color("green")
-                cylinder(h=wallThickness+3, d=cutOut[2], $fn=20);
+                cylinder(h=wallThickness+3, d=cutOut[2]);
         }
         
       } // for ..
@@ -2010,7 +2010,7 @@ module pcbStandoff(color, height, type, plane)
           {
             translate([0,0,-0.3]) 
             {
-              cylinder(h=2, r1=(standoffDiameter/2)+3, r2=standoffDiameter/2);
+              cylinder(h=2, r1=(standoffDiameter/2)+3, r2=standoffDiameter/2, $fn=25);
             }
           }
           if (plane == "lid")
@@ -2088,7 +2088,7 @@ module connector(plane, isPcb, x, y, d1, d2, d3)
                 d = d3,
                 $fn = 20);
           //-- flange --
-          translate([0,0,(basePlaneThickness-0.5)]) cylinder(h=2, r1=(d3/2)+3, r2=d3/2);
+          translate([0,0,(basePlaneThickness-0.5)]) cylinder(h=2, r1=(d3/2)+3, r2=d3/2, $fn=25);
         }  
         
         //-- screw head Hole --
@@ -2130,7 +2130,7 @@ module connector(plane, isPcb, x, y, d1, d2, d3)
                 d = d3,
                 $fn = 20);
           //-- flange --
-          translate([0,0,(ht*1)-1.9]) cylinder(h=2, r1=(d3/2), r2=(d3/2)+3);
+          translate([0,0,(ht*1)-1.9]) cylinder(h=2, r1=(d3/2), r2=(d3/2)+3, $fn=25);
         }  
         //-- insert --
         linear_extrude(ht)
@@ -2381,7 +2381,7 @@ module YAPPgenerate()
   echo("YAPP:   copyright by Willem Aandewiel");
   echo("YAPP==========================================");
   
-  $fn=25;
+  $fn=64;
       
             
       if (showShellZero)
