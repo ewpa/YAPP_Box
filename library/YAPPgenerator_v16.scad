@@ -1090,7 +1090,7 @@ module cutoutsInXY(type)
           translate([posx, posy, zPos])
             color("green")
               linear_extrude(thickness*2)
-                circle(d=cutOut[2], $fn=20);
+                circle(d=cutOut[2]);
         }
       } // for ..
       
