@@ -2312,14 +2312,21 @@ module showOrientation()
 module lidHookInside()
 {
   //echo("lidHookInside(original) ..");
-  
+
 } // lidHookInside(dummy)
-  
+
+//===========================================================
+module lidHookCut()
+{
+  //echo("lidHookCut(original) ..");
+
+} // lidHookCut(dummy)
+
 //===========================================================
 module lidHookOutside()
 {
   //echo("lidHookOutside(original) ..");
-  
+
 } // lidHookOutside(dummy)
 
 //===========================================================
@@ -2330,10 +2337,17 @@ module baseHookInside()
 } // baseHookInside(dummy)
 
 //===========================================================
+module baseHookCut()
+{
+  //echo("baseHookCut(original) ..");
+
+} // baseHookCut(dummy)
+
+//===========================================================
 module baseHookOutside()
 {
   //echo("baseHookOutside(original) ..");
-  
+
 } // baseHookOutside(dummy)
 
 
@@ -2413,6 +2427,7 @@ module YAPPgenerate()
         {
           baseShell();
           
+          baseHookCut();
           cutoutsInXY("base");
           cutoutsGrill("base", basePlaneThickness+roundRadius+2);
           cutoutsInXZ("base");
@@ -2482,6 +2497,7 @@ module YAPPgenerate()
                 {
                   lidShell();
                   
+                  lidHookCut();
                   cutoutsInXY("lid");
                   cutoutsGrill("lid", lidPlaneThickness+roundRadius+2);
                   cutoutsInXZ("lid");
@@ -2562,6 +2578,7 @@ module YAPPgenerate()
             {
               lidShell();
 
+              lidHookCut();
               cutoutsInXY("lid");
               cutoutsGrill("lid", lidPlaneThickness+roundRadius+2);
               cutoutsInXZ("lid");
